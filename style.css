@@ -1,0 +1,797 @@
+/* ===========================
+   GOOGLE STYLE RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#F8F5F2;
+
+    color:#333;
+
+    overflow:hidden;
+
+    width:100vw;
+    height:100vh;
+
+}
+
+/* ===========================
+      BACKGROUND
+=========================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top left,#FFFDF8,#F6EFE7 45%,#EFE6DD);
+
+    z-index:-10;
+
+}
+
+/* ===========================
+      SCREENS
+=========================== */
+
+.screen{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.8s;
+
+    padding:25px;
+
+}
+
+.screen.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+/* ===========================
+      HEADINGS
+=========================== */
+
+h1,h2{
+
+font-family:"Cormorant Garamond",serif;
+
+font-weight:600;
+
+letter-spacing:.5px;
+
+color:#3B322C;
+
+}
+
+h1{
+
+font-size:46px;
+
+margin-bottom:15px;
+
+}
+
+h2{
+
+font-size:34px;
+
+margin-top:30px;
+
+}
+
+p{
+
+font-size:17px;
+
+line-height:1.8;
+
+text-align:center;
+
+max-width:320px;
+
+color:#6B625D;
+
+}
+
+/* ===========================
+      BUTTON
+=========================== */
+
+button{
+
+margin-top:30px;
+
+padding:14px 34px;
+
+border:none;
+
+border-radius:50px;
+
+background:#8D6E63;
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 12px 25px rgba(0,0,0,.12);
+
+}
+
+button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 30px rgba(0,0,0,.18);
+
+}
+
+button:active{
+
+transform:scale(.97);
+
+}
+
+/* ===========================
+      HEART CONTAINER
+=========================== */
+
+#hearts{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+overflow:hidden;
+
+}
+
+/* ===========================
+      CONFETTI
+=========================== */
+
+#confetti{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+display:none;
+
+}
+
+/* ===========================
+      FADE ANIMATION
+=========================== */
+
+.fadeUp{
+
+animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================
+      MOBILE
+=========================== */
+
+@media(max-width:480px){
+
+h1{
+
+font-size:36px;
+
+}
+
+h2{
+
+font-size:28px;
+
+}
+
+p{
+
+font-size:15px;
+
+}
+
+button{
+
+width:85%;
+
+}
+
+}
+/* ===================================
+            GIFT BOX
+=================================== */
+
+.gift-box{
+    position:relative;
+    width:180px;
+    height:180px;
+    cursor:pointer;
+    animation:giftFloat 3s ease-in-out infinite;
+    transition:transform .4s;
+}
+
+.gift-box:hover{
+    transform:scale(1.05);
+}
+
+/* Box */
+
+.gift-body{
+    position:absolute;
+    bottom:0;
+    width:180px;
+    height:120px;
+    background:#D8BFA9;
+    border-radius:0 0 16px 16px;
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.18);
+}
+
+/* Vertical ribbon */
+
+.gift-body::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:22px;
+    height:120px;
+    background:#8D6E63;
+}
+
+/* Lid */
+
+.gift-lid{
+    position:absolute;
+    top:35px;
+    width:180px;
+    height:38px;
+    background:#CFAF95;
+    border-radius:10px;
+    z-index:3;
+    transition:1s;
+}
+
+/* Ribbon on lid */
+.gift-lid::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:22px;
+    height:38px;
+    background:#8D6E63;
+}
+
+/* Bow */
+
+.gift-lid::after{
+    content:"🎀";
+    position:absolute;
+    left:50%;
+    top:-24px;
+    transform:translateX(-50%);
+    font-size:40px;
+}
+
+/* Floating shadow */
+
+.gift-box::after{
+    content:"";
+    position:absolute;
+    bottom:-18px;
+    left:50%;
+    transform:translateX(-50%);
+    width:130px;
+    height:16px;
+    background:rgba(0,0,0,.12);
+    border-radius:50%;
+    filter:blur(6px);
+}
+
+/* Idle animation */
+
+@keyframes giftFloat{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* Open animation */
+
+.gift-box.open .gift-lid{
+    transform:
+        translateY(-70px)
+        rotate(-15deg);
+}
+/* ==========================
+        SPARKLES
+========================== */
+
+.sparkle{
+
+position:absolute;
+
+font-size:22px;
+
+animation:spark 1.2s forwards;
+
+pointer-events:none;
+
+}
+
+@keyframes spark{
+
+0%{
+
+opacity:1;
+
+transform:translate(0,0) scale(.5);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+translate(
+var(--x),
+var(--y))
+scale(1.6);
+
+}
+
+}
+
+/* ==========================
+     SCREEN TRANSITION
+========================== */
+
+.screen{
+
+transition:
+opacity .8s ease,
+visibility .8s ease;
+
+}
+
+.screen.hide{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+/* ==========================
+        ENVELOPE
+========================== */
+
+.envelope{
+
+position:relative;
+
+width:300px;
+
+height:210px;
+
+cursor:pointer;
+
+perspective:1000px;
+
+}
+
+/* Back */
+
+.envelope-back{
+
+position:absolute;
+
+bottom:0;
+
+width:100%;
+
+height:150px;
+
+background:#f3e7da;
+
+border-radius:10px;
+
+}
+
+/* Front */
+
+.envelope-front{
+
+position:absolute;
+
+bottom:0;
+
+width:100%;
+
+height:150px;
+
+background:#e8d8c7;
+
+clip-path:polygon(0 0,100% 0,50% 70%);
+
+z-index:3;
+
+}
+
+/* Flap */
+
+.envelope-flap{
+
+position:absolute;
+
+top:0;
+
+width:0;
+
+height:0;
+
+border-left:150px solid transparent;
+
+border-right:150px solid transparent;
+
+border-top:95px solid #dcc6b3;
+
+transform-origin:top;
+
+transition:.9s;
+
+z-index:5;
+
+}
+
+/* Letter */
+
+.letter{
+
+position:absolute;
+
+left:20px;
+
+bottom:20px;
+
+width:260px;
+
+height:160px;
+
+background:white;
+
+border-radius:10px;
+
+padding:20px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+transition:1s;
+
+z-index:2;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+}
+
+.letter h2{
+
+margin-bottom:10px;
+
+}
+
+.envelope.open .envelope-flap{
+
+transform:rotateX(180deg);
+
+}
+
+.envelope.open .letter{
+
+transform:translateY(-120px);
+
+}
+/* ==========================
+      LETTER SCREEN
+========================== */
+
+.paper{
+
+    width:90%;
+    max-width:360px;
+
+    background:#fffdf9;
+
+    border-radius:18px;
+
+    padding:35px 28px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+    text-align:center;
+
+    position:relative;
+
+    animation:paperPop .8s ease;
+
+}
+
+@keyframes paperPop{
+
+from{
+
+opacity:0;
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+transform:scale(1);
+
+}
+
+}
+
+#typing{
+
+min-height:140px;
+
+line-height:1.9;
+
+margin-top:20px;
+
+white-space:pre-wrap;
+
+}
+
+#cursor{
+
+font-size:24px;
+
+color:#8D6E63;
+
+animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+50%{
+
+opacity:0;
+
+}
+
+}
+
+#continueBtn{
+
+display:none;
+
+margin-top:25px;
+
+}
+/* ==========================
+          BOOK
+========================== */
+
+.book{
+
+width:90%;
+max-width:360px;
+height:500px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.page{
+
+position:absolute;
+
+inset:0;
+
+background:#fffdf9;
+
+border-radius:18px;
+
+padding:35px;
+
+box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+opacity:0;
+
+transform:translateX(100%);
+
+transition:.5s ease;
+
+}
+.page.active{
+
+opacity:1;
+
+transform:translateX(0) scale(1);
+
+z-index:2;
+
+}
+
+.page{
+
+transform:translateX(100%) scale(.96);
+
+transition:
+transform .55s ease,
+opacity .55s ease;
+
+}
+
+.page.exit{
+
+transform:translateX(-100%) scale(.96);
+
+opacity:0;
+
+}
+
+.page.exit{
+
+transform:translateX(-100%);
+
+opacity:0;
+
+}
+
+.book-controls{
+
+margin-top:25px;
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+#pageNumber{
+
+font-weight:600;
+
+color:#666;
+
+}
+/* ==========================
+        ENDING SCREEN
+========================== */
+
+#ending-screen{
+
+background:#F8F5F2;
+
+text-align:center;
+
+}
+
+#ending-screen h1{
+
+font-size:70px;
+
+margin-bottom:15px;
+
+animation:beat 1.2s infinite;
+
+}
+
+@keyframes beat{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.12);
+
+}
+
+}

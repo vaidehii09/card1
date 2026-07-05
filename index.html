@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>For Bojuu 🤍</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+
+    <div class="background"></div>
+
+    <!-- Floating Hearts -->
+
+    <div id="hearts"></div>
+
+    <!-- Gift Screen -->
+
+    <section id="gift-screen" class="screen active">
+
+        <div class="gift-box" id="giftBox">
+
+            <div class="gift-lid"></div>
+
+            <div class="gift-body"></div>
+
+        </div>
+
+        <h2>A little gift...</h2>
+
+        <p>Tap the gift</p>
+
+    </section>
+
+    <!-- Envelope Screen -->
+
+    <section id="envelope-screen" class="screen">
+
+<div class="envelope" id="envelope">
+
+    <div class="envelope-back"></div>
+
+    <div class="letter" id="letter">
+
+        <h2>Dear Bojuu,</h2>
+
+        <p>Tap me...</p>
+
+    </div>
+
+    <div class="envelope-front"></div>
+
+    <div class="envelope-flap"></div>
+
+</div>
+
+        <p>Tap the envelope</p>
+
+    </section>
+
+    <!-- Letter Screen -->
+
+    <section id="letter-screen" class="screen">
+
+        <div class="paper">
+
+            <h1>Dear Bojuu,</h1>
+
+    <p id="typing"></p>
+
+<span id="cursor">|</span>
+
+<button id="continueBtn">
+    Continue →
+</button>
+
+        </div>
+
+    </section>
+
+    <!-- Book -->
+<section id="book-screen" class="screen">
+
+    <div class="book">
+
+        <div class="page active">
+            <h2>If i had to start somewhere...</h2>
+            <p> You have have effortlessly etched your name upon chambers of my heart.
+          If someone asked me to describe us in one sentence...
+
+I'd probably say,
+
+"We fight like enemies, annoy each other like siblings, and somehow care for each other more than we'll ever admit."
+
+Honestly, I wouldn't change that.  </p>
+        </div>
+
+        <div class="page">
+            <h2>Thank You </h2>
+            <p>Sometimes I wonder how two people can argue so much and still end up looking for each other at the end of the day.Maybe it's because, beneath all the stubbornness, the silence, and the unnecessary fights, we've always known one thing—Because no matter how much I annoy you, you're still the first person I want to tell about my day, the first person I miss when we're not talking, and the first person I want back after every fight.Maybe that's what "us" has always been.Not perfect.Not effortless.Just two stubborn people who somehow keep choosing each other, again and again.Life feels a little incomplete without you in it.</p>
+        </div>
+
+        <div class="page">
+            <h2>You probably don't notice this ...</h2>
+            <p>I don't need a special day to remind you how much you mean to me.At every step of life, I want to make sure you feel loved, valued, and cared for. When you feel tired, I'll be there to remind you that you're not alone.When you doubt yourself, I'll be there to believe in you until you can believe in yourself again.Because loving you isn't just something I say.It's something I want you to feel in every moment, at every step of your life.</p>
+        </div>
+
+        <div class="page">
+            <h2>If you ever forget </h2>
+            <p>If one day life becomes too heavy...If you ever feel like nobody understands you...
+            Or if you ever think you're alone...I hope you remember this page.There is at least one person who will always be silently wishing that you're okay.Even on days we aren't talking.Even after our biggest arguments.That doesn't change</p>
+        </div>
+
+        <div class="page">
+            <h2>Something i hope is </h2>
+            <p>Whatever happens between us , I hope we never find replacement for each other.I hope the little misunderstandings never become bigger than the bond we share.And I hope that no matter what life brings, we always choose to understand, forgive, and stay.</p>
+        </div>
+
+        <div class="page">
+            <h2>BUT Atlast,</h2>
+            <p>As my final act of love, I would let you go, so you could find the peace and calm my presence could never bring. Even from afar, I will always hope life is kinder to you than I ever managed to be.</p>
+        </div>
+
+        <div class="page">
+            <h2></h2>
+            <p>/p>
+        </div>
+
+    </div>
+
+    <div class="book-controls">
+
+        <button id="prevPage">←</button>
+
+        <span id="pageNumber">1 / 7</span>
+
+        <button id="nextPage">→</button>
+
+    </div>
+
+</section>
+
+    <!-- Confetti -->
+<canvas id="confetti"></canvas>
+
+<section id="ending-screen" class="screen">
+
+    <h1>🤍</h1>
+
+    <h2>Thank You, Bojuu</h2>
+
+    <p>
+        This little website was made especially for you.
+    </p>
+
+    <button id="restartBtn">
+        Read Again
+    </button>
+
+</section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
